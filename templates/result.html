@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Result</title>
+
+    <script>
+      
+    </script>
+
+    <style type="text/css">
+      .navbar {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .navbar-brand {
+        color: #ffffff;
+        font-family: "Nova Square";
+        font-size: 20px;
+        margin-right: 20px;
+      }
+      #id1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .card{
+        align-self: center;
+        margin-top: 100px;
+        width: 740px;
+        height: 360px;
+        border-radius: 0;
+        color: white;
+        background: #1e1e1e;
+      }
+      .card-title {
+        font-family: "Montserrat";
+        font-size: 48px;
+        text-align: left;
+        width: 660px;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: auto auto;
+        width: 660px;
+        height: 200px;
+      }
+      .grid-container > div {
+        color: white;
+        background: #454545;
+        padding: 10px 0;
+      }
+      #num {
+        font-family: "Nova Square";
+        font-size: 36px;
+      }
+      #unit {
+        font-family: Open Sans;
+        font-size: 14px;
+      }
+      #speed {
+        font-family: Montserrat;
+        font-size: 20px;
+      }
+      #sw-agn {
+        width: 740px;
+        height: 30px;
+        color: white;
+        background: #454545;
+        border: none;
+        font-family: Open Sans;
+        font-size: 16px;
+      }
+
+      @media (max-width: 766px) {
+        #id1 {
+          padding-right: 0;
+        }
+      }
+    </style>
+  </head>
+
+
+  <body style="background: #000000;">
+  	<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #1e1e1e">
+      <a class="navbar-brand" href="#">RACHIT2</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active py-0" href="#" id="id1">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link py-0" href="E:\Project\Web\TypeSpeed\aboutUs.html" id="id1">About</a>
+          <a class="nav-item nav-link py-0" href="#" id="id1">Contact</a>
+        </div>
+      </div>
+    </nav>
+<!-- net_speed,errors,speed,accuracy
+ -->    <center>
+      <div class="card" id="result">
+        <div class="card-body">
+          <div class="card-title" id="heading">Results</div>
+          <div class="grid-container">
+            <div class="grid-item">
+              <element id="num">{{speednet[0]}}</element><element id="unit"> words/min </element><br>
+              <element id="speed">Net Speed</element>
+            </div>
+            <div class="grid-item">
+              <element id="num">{{speednet[2]}}</element><element id="unit"> words/min </element><br>
+              <element id="speed">Gross Speed</element>
+            </div>
+            <div class="grid-item">
+              <element id="num">{{speednet[3]}}</element><element id="unit"> percent </element><br>
+              <element id="speed">Accuracy</element>
+            </div>
+            <div class="grid-item">
+              <element id="num">{{speednet[1]}}</element><element id="unit"> words </element><br>
+              <element id="speed">Spelt Wrong</element>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/">
+        <input type="button" value="Try Again" id="sw-agn">
+      </a>
+    </center>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
