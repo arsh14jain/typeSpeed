@@ -74,7 +74,13 @@ def index():
 	sample_text=List[n]
 	return render_template('ind.html',sample_text=sample_text)
 
+@app.route('/about')
+def aboutPage():
+	return render_template('aboutUs.html')
 
+@app.route('/contact')
+def contactPage():
+	return render_template('contact.html')	
 
 if __name__ == "__main__":
 	app.run(debug=True)

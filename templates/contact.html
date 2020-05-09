@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Result</title>
+    <title>Contact</title>
 
     <script>
       
@@ -31,54 +31,38 @@
         padding-right: 1rem;
       }
 
-      .card{
-        align-self: center;
-        margin-top: 100px;
-        width: 740px;
-        height: 360px;
-        border-radius: 0;
+      .grid-container {
+        margin-top: 120px;
+        display: grid;
+        grid-gap: 100px;
+        grid-template-columns: auto auto;
+        width: 700px;
+      }
+      #arsh, #rachit {
         color: white;
         background: #1e1e1e;
+        padding: 20px;
+        width: 300px;
+        height: 360px;
+        border-top: solid;
+        border-bottom: solid;
+        border-width: 5px;
+        border-color: #454545;
       }
-      .card-title {
-        font-family: "Montserrat";
-        font-size: 48px;
-        text-align: left;
-        width: 660px;
-      }
-
-      .grid-container {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: auto auto;
-        width: 660px;
-        height: 200px;
-      }
-      .grid-container > div {
-        color: white;
-        background: #454545;
-        padding: 10px 0;
-      }
-      #num {
+      #naam {
         font-family: "Nova Square";
-        font-size: 36px;
+        font-size: 32px;
       }
-      #unit {
-        font-family: Open Sans;
-        font-size: 14px;
-      }
-      #speed {
+      #dtls {
         font-family: Montserrat;
-        font-size: 20px;
+        font-size: 18px;
       }
-      #sw-agn {
-        width: 740px;
-        height: 30px;
-        color: white;
-        background: #454545;
-        border: none;
+      #info {
+        margin-top: 10px;
+        line-height: 24px;
         font-family: Open Sans;
-        font-size: 16px;
+        font-size: 18px;
+        text-align: left;
       }
 
       @media (max-width: 766px) {
@@ -100,40 +84,33 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link py-0" href="/" id="id1">Home<span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link py-0" href="/about" id="id1">About</a>
-          <a class="nav-item nav-link py-0" href="/contact" id="id1">Contact</a>
+          <a class="nav-item nav-link active py-0" href="#" id="id1">Contact</a>
         </div>
       </div>
     </nav>
-<!-- net_speed,errors,speed,accuracy-->
+
     <center>
-      <div class="card" id="result">
-        <div class="card-body">
-          <div class="card-title" id="heading">Results</div>
-          <div class="grid-container">
-            <div class="grid-item">
-              <element id="num">{{speednet[0]}}</element><element id="unit"> words/min </element><br>
-              <element id="speed">Net Speed</element>
-            </div>
-            <div class="grid-item">
-              <element id="num">{{speednet[2]}}</element><element id="unit"> words/min </element><br>
-              <element id="speed">Gross Speed</element>
-            </div>
-            <div class="grid-item">
-              <element id="num">{{speednet[3]}}</element><element id="unit"> percent </element><br>
-              <element id="speed">Accuracy</element>
-            </div>
-            <div class="grid-item">
-              <element id="num">{{speednet[1]}}</element><element id="unit"> words </element><br>
-              <element id="speed">Spelt Wrong</element>
-            </div>
-          </div>
+      <div class="grid-container">
+        <div class="grid-item" id="arsh">
+          <img src="{{url_for('static', filename='arsh.png')}}" width="80" height="80"><br><br>
+          <element id="naam">Arsh Jain</element><br>
+          <element id="dtls">CSE: MIT, Manipal</element><br><br>
+          <element id="info">GitHub: <a href="https://github.com/arsh14jain" style="color: darkgrey">arsh14jain</a></element><br>
+          <element id="info">LinkedIn: <a href="https://linkedin.com/in/arsh14jain" style="color: darkgrey">arsh14jain</a></element><br>
+          <element id="info">arshjain99@gmail.com</element><br>
+          <element id="info">+91 96322 78889</element>
+        </div>
+        <div class="grid-item" id="rachit">
+          <img src="{{url_for('static', filename='rachit.png')}}" width="80" height="80"><br><br>
+          <element id="naam">Rachit Gangwal</element><br>
+          <element id="dtls">CSE: MIT, Manipal</element><br><br>
+          <element id="info">GitHub: <a href="https://github.com/gangwalrachit" style="color: darkgrey">gangwalrachit</a></element><br>
+          <element id="info">LinkedIn: <a href="https://linkedin.com/in/gangwalrachit" style="color: darkgrey">gangwalrachit</a></element><br>
+          <element id="info">gangwalrachit1989@gmail.com</element><br>
+          <element id="info">+91 84220 84300</element>
         </div>
       </div>
-      <a href="/">
-        <input type="button" value="Try Again" id="sw-agn">
-      </a>
-    </center>
-
+    </center>  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

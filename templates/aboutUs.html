@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Result</title>
+    <title>About</title>
 
     <script>
       
@@ -31,8 +31,8 @@
         padding-right: 1rem;
       }
 
-      .card{
-        align-self: center;
+
+      .card {
         margin-top: 100px;
         width: 740px;
         height: 360px;
@@ -41,44 +41,26 @@
         background: #1e1e1e;
       }
       .card-title {
+        margin-top: 30px;
+        margin-bottom: 0px;
         font-family: "Montserrat";
         font-size: 48px;
+        width: 660px;
         text-align: left;
+      }
+      .card-text {
         width: 660px;
+        text-align: left;
+        font-family: "Open Sans";
+        line-height: 24px;
       }
-
-      .grid-container {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: auto auto;
-        width: 660px;
-        height: 200px;
-      }
-      .grid-container > div {
-        color: white;
-        background: #454545;
-        padding: 10px 0;
-      }
-      #num {
-        font-family: "Nova Square";
-        font-size: 36px;
-      }
-      #unit {
-        font-family: Open Sans;
-        font-size: 14px;
-      }
-      #speed {
-        font-family: Montserrat;
-        font-size: 20px;
-      }
-      #sw-agn {
+      #instrct {
+        font-size: 18px;
         width: 740px;
         height: 30px;
         color: white;
         background: #454545;
-        border: none;
-        font-family: Open Sans;
-        font-size: 16px;
+        font-family: "Open Sans"; 
       }
 
       @media (max-width: 766px) {
@@ -99,40 +81,27 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link py-0" href="/" id="id1">Home<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link py-0" href="/about" id="id1">About</a>
+          <a class="nav-item nav-link active py-0" href="#" id="id1">About</a>
           <a class="nav-item nav-link py-0" href="/contact" id="id1">Contact</a>
         </div>
       </div>
     </nav>
-<!-- net_speed,errors,speed,accuracy-->
-    <center>
-      <div class="card" id="result">
-        <div class="card-body">
-          <div class="card-title" id="heading">Results</div>
-          <div class="grid-container">
-            <div class="grid-item">
-              <element id="num">{{speednet[0]}}</element><element id="unit"> words/min </element><br>
-              <element id="speed">Net Speed</element>
-            </div>
-            <div class="grid-item">
-              <element id="num">{{speednet[2]}}</element><element id="unit"> words/min </element><br>
-              <element id="speed">Gross Speed</element>
-            </div>
-            <div class="grid-item">
-              <element id="num">{{speednet[3]}}</element><element id="unit"> percent </element><br>
-              <element id="speed">Accuracy</element>
-            </div>
-            <div class="grid-item">
-              <element id="num">{{speednet[1]}}</element><element id="unit"> words </element><br>
-              <element id="speed">Spelt Wrong</element>
-            </div>
+
+    <div class="main-area">
+      <center>
+        <div class="card" id="start-face">
+          <div class="card-body">
+            <div class="card-title" id="sw-time">College Students</div>
+            <p class="card-text" id="smpl-txt"><br>
+              We are third year Computer Science and Engineering students aspiring for a Placement at your company to use our knowledge and experience optimally!<br><br>
+              This a small Project that we did over the lockdown period.<br>
+              Hope you like our website.
+            </p>
           </div>
         </div>
-      </div>
-      <a href="/">
-        <input type="button" value="Try Again" id="sw-agn">
-      </a>
-    </center>
+        <div id="instrct">Arsh Jain . Rachit Gangwal</div>
+      </center>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
