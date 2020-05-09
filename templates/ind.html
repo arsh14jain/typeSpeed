@@ -10,88 +10,88 @@
     <title>IamSpeed</title>
     <script>
         function startButton() {
-        document.getElementById("txt-box").focus();
-        document.getElementById("sw-go").style.display = "none";
-        document.getElementById("sw-submit").style.display = "block";
-        document.getElementsByName("txt-box")[0].disabled=false;
-      }
+            document.getElementsByName("txt-box")[0].disabled=false;
+            document.getElementById("sw-go").style.display = "none";
+            document.getElementById("sw-submit").style.display = "block";
+            document.getElementById("txt-box").focus();
+        }
 
       var sw = {
-  /* [INIT] */
-  t:null,
-  etime : null, // holds HTML time display
-  erst : null, // holds HTML reset button
-  ego : null, // holds HTML start/stop button
-  timer : null, // timer object
-  now : 0, // current timer
-  init : function () {
-    // Get HTML elements
-    sw.etime = document.getElementById("sw-time");
-    // sw.erst = document.getElementById("sw-rst");
-    sw.ego = document.getElementById("sw-go");
-    sw.t = document.getElementById("sw-t");
-    // document.getElementById("sw-t").style.display='block';
-    // Attach listeners
-     // sw.erst.addEventListener("click", sw.reset);
-    // sw.erst.disabled = false;
-    sw.ego.addEventListener("click", sw.start);
-    sw.ego.disabled = false;
-  },
+      /* [INIT] */
+      t:null,
+      etime : null, // holds HTML time display
+      erst : null, // holds HTML reset button
+      ego : null, // holds HTML start/stop button
+      timer : null, // timer object
+      now : 0, // current timer
+      init : function () {
+        // Get HTML elements
+        sw.etime = document.getElementById("sw-time");
+        // sw.erst = document.getElementById("sw-rst");
+        sw.ego = document.getElementById("sw-go");
+        sw.t = document.getElementById("sw-t");
+        // document.getElementById("sw-t").style.display='block';
+        // Attach listeners
+         // sw.erst.addEventListener("click", sw.reset);
+        // sw.erst.disabled = false;
+        sw.ego.addEventListener("click", sw.start);
+        sw.ego.disabled = false;
+      },
 
-  /* [ACTIONS] */
-  tick : function () {
-  // tick() : update display if stopwatch running
+      /* [ACTIONS] */
+      tick : function () {
+      // tick() : update display if stopwatch running
 
-    // Calculate hours, mins, seconds
-    sw.now++;
-    var remain = sw.now;
-    var hours = Math.floor(remain / 3600);
-    remain -= hours * 3600;
-    var mins = Math.floor(remain / 60);
-    remain -= mins * 60;
-    var secs = remain;
+        // Calculate hours, mins, seconds
+        sw.now++;
+        var remain = sw.now;
+        var hours = Math.floor(remain / 3600);
+        remain -= hours * 3600;
+        var mins = Math.floor(remain / 60);
+        remain -= mins * 60;
+        var secs = remain;
 
-    // Update the display timer
-    if (hours<10) { hours = "0" + hours; }
-    if (mins<10) { mins = "0" + mins; }
-    if (secs<10) { secs = "0" + secs; }
-    sw.etime.innerHTML = hours + ":" + mins + ":" + secs;
-    sw.t.value = sw.now
-  },
+        // Update the display timer
+        if (hours<10) { hours = "0" + hours; }
+        if (mins<10) { mins = "0" + mins; }
+        if (secs<10) { secs = "0" + secs; }
+        sw.etime.innerHTML = hours + ":" + mins + ":" + secs;
+        sw.t.value = sw.now
+      },
 
-  start : function () {
-  // start() : start the stopwatch
+      start : function () {
+      // start() : start the stopwatch
 
-    sw.timer = setInterval(sw.tick, 1000);
-    sw.tick();
-    sw.ego.value = "Stop";
-    sw.ego.removeEventListener("click", sw.start);
-    sw.ego.addEventListener("click", sw.stop);
-  },
+        sw.timer = setInterval(sw.tick, 1000);
+        sw.tick();
+        sw.ego.value = "Stop";
+        sw.ego.removeEventListener("click", sw.start);
+        sw.ego.addEventListener("click", sw.stop);
+      },
 
-  stop  : function () {
-  // stop() : stop the stopwatch
+      stop  : function () {
+      // stop() : stop the stopwatch
 
-    clearInterval(sw.timer);
-    sw.timer = null;
-    sw.ego.value = "Start";
-    sw.ego.removeEventListener("click", sw.stop);
-    sw.ego.addEventListener("click", sw.start);
-  },
+        clearInterval(sw.timer);
+        sw.timer = null;
+        sw.ego.value = "Start";
+        sw.ego.removeEventListener("click", sw.stop);
+        sw.ego.addEventListener("click", sw.start);
+      },
 
-  // reset : function () {
-  // // reset() : reset the stopwatch
+      // reset : function () {
+      // // reset() : reset the stopwatch
 
-  //   // Stop if running
-  //   if (sw.timer != null) { sw.stop(); }
+      //   // Stop if running
+      //   if (sw.timer != null) { sw.stop(); }
 
-  //   // Reset time
-  //   sw.now = -1;
-  //   sw.tick();
-  // }
-};
+      //   // Reset time
+      //   sw.now = -1;
+      //   sw.tick();
+      // }
+    };
 
-window.addEventListener("load", sw.init);
+    window.addEventListener("load", sw.init);
       
     </script>
     <style type="text/css">
@@ -167,15 +167,15 @@ window.addEventListener("load", sw.init);
 
 <body style="background: #000000;">
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #1e1e1e">
-        <a class="navbar-brand" href="#">IamSpeed</a>
+        <a class="navbar-brand" href="/">IamSpeed</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active py-0" href="#" id="id1">Home<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link py-0" href="E:\Project\Web\TypeSpeed\aboutUs.html" id="id1">About</a>
-                <a class="nav-item nav-link py-0" href="E:\Project\Web\TypeSpeed\contact.html" id="id1">Contact</a>
+                <a class="nav-item nav-link py-0" href="/about" id="id1">About</a>
+                <a class="nav-item nav-link py-0" href="/contact" id="id1">Contact</a>
             </div>
         </div>
     </nav>
