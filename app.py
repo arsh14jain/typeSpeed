@@ -78,9 +78,9 @@ def index():
 def aboutPage():
 	return render_template('aboutUs.html')
 
-@app.route('/contact')
-def contactPage():
-	return render_template('contact.html')	
+@app.route('/developers')
+def developersPage():
+	return render_template('developers.html')	
 
 if __name__ == "__main__":
 	app.run(debug=True)

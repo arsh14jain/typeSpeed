@@ -16,152 +16,171 @@
             document.getElementById("txt-box").focus();
         }
 
-      var sw = {
-      /* [INIT] */
-      t:null,
-      etime : null, // holds HTML time display
-      erst : null, // holds HTML reset button
-      ego : null, // holds HTML start/stop button
-      timer : null, // timer object
-      now : 0, // current timer
-      init : function () {
-        // Get HTML elements
-        sw.etime = document.getElementById("sw-time");
-        // sw.erst = document.getElementById("sw-rst");
-        sw.ego = document.getElementById("sw-go");
-        sw.t = document.getElementById("sw-t");
-        // document.getElementById("sw-t").style.display='block';
-        // Attach listeners
-         // sw.erst.addEventListener("click", sw.reset);
-        // sw.erst.disabled = false;
-        sw.ego.addEventListener("click", sw.start);
-        sw.ego.disabled = false;
-      },
+        var sw = {
+          /* [INIT] */
+          t:null,
+          etime : null, // holds HTML time display
+          erst : null, // holds HTML reset button
+          ego : null, // holds HTML start/stop button
+          timer : null, // timer object
+          now : 0, // current timer
+          init : function () {
+            // Get HTML elements
+            sw.etime = document.getElementById("sw-time");
+            // sw.erst = document.getElementById("sw-rst");
+            sw.ego = document.getElementById("sw-go");
+            sw.t = document.getElementById("sw-t");
+            // document.getElementById("sw-t").style.display='block';
+            // Attach listeners
+             // sw.erst.addEventListener("click", sw.reset);
+            // sw.erst.disabled = false;
+            sw.ego.addEventListener("click", sw.start);
+            sw.ego.disabled = false;
+          },
 
-      /* [ACTIONS] */
-      tick : function () {
-      // tick() : update display if stopwatch running
+          /* [ACTIONS] */
+          tick : function () {
+          // tick() : update display if stopwatch running
 
-        // Calculate hours, mins, seconds
-        sw.now++;
-        var remain = sw.now;
-        var hours = Math.floor(remain / 3600);
-        remain -= hours * 3600;
-        var mins = Math.floor(remain / 60);
-        remain -= mins * 60;
-        var secs = remain;
+            // Calculate hours, mins, seconds
+            sw.now++;
+            var remain = sw.now;
+            var hours = Math.floor(remain / 3600);
+            remain -= hours * 3600;
+            var mins = Math.floor(remain / 60);
+            remain -= mins * 60;
+            var secs = remain;
 
-        // Update the display timer
-        if (hours<10) { hours = "0" + hours; }
-        if (mins<10) { mins = "0" + mins; }
-        if (secs<10) { secs = "0" + secs; }
-        sw.etime.innerHTML = hours + ":" + mins + ":" + secs;
-        sw.t.value = sw.now
-      },
+            // Update the display timer
+            if (hours<10) { hours = "0" + hours; }
+            if (mins<10) { mins = "0" + mins; }
+            if (secs<10) { secs = "0" + secs; }
+            sw.etime.innerHTML = hours + ":" + mins + ":" + secs;
+            sw.t.value = sw.now
+          },
 
-      start : function () {
-      // start() : start the stopwatch
+          start : function () {
+          // start() : start the stopwatch
 
-        sw.timer = setInterval(sw.tick, 1000);
-        sw.tick();
-        sw.ego.value = "Stop";
-        sw.ego.removeEventListener("click", sw.start);
-        sw.ego.addEventListener("click", sw.stop);
-      },
+            sw.timer = setInterval(sw.tick, 1000);
+            sw.tick();
+            sw.ego.value = "Stop";
+            sw.ego.removeEventListener("click", sw.start);
+            sw.ego.addEventListener("click", sw.stop);
+          },
 
-      stop  : function () {
-      // stop() : stop the stopwatch
+          stop  : function () {
+          // stop() : stop the stopwatch
 
-        clearInterval(sw.timer);
-        sw.timer = null;
-        sw.ego.value = "Start";
-        sw.ego.removeEventListener("click", sw.stop);
-        sw.ego.addEventListener("click", sw.start);
-      },
+            clearInterval(sw.timer);
+            sw.timer = null;
+            sw.ego.value = "Start";
+            sw.ego.removeEventListener("click", sw.stop);
+            sw.ego.addEventListener("click", sw.start);
+          },
 
-      // reset : function () {
-      // // reset() : reset the stopwatch
+          // reset : function () {
+          // // reset() : reset the stopwatch
 
-      //   // Stop if running
-      //   if (sw.timer != null) { sw.stop(); }
+          //   // Stop if running
+          //   if (sw.timer != null) { sw.stop(); }
 
-      //   // Reset time
-      //   sw.now = -1;
-      //   sw.tick();
-      // }
-    };
+          //   // Reset time
+          //   sw.now = -1;
+          //   sw.tick();
+          // }
+        };
 
-    window.addEventListener("load", sw.init);
-      
+        window.addEventListener("load", sw.init);      
     </script>
+
     <style type="text/css">
-    .navbar {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .navbar-brand {
-        color: #ffffff;
-        font-family: "Nova Square";
-        font-size: 20px;
-        margin-right: 20px;
-    }
-
-    #id1 {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-
-    .main-area {
-        visibility: visible;
-    }
-
-    .card {
-        margin-top: 100px;
-        width: 740px;
-        height: 360px;
-        border-radius: 0;
-        color: white;
-        background: #1e1e1e;
-    }
-
-    .card-title {
-        font-family: "Nova Square";
-        font-size: 48px;
-    }
-
-    .card-text {
-        width: 660px;
-        text-align: left;
-        font-family: "Open Sans";
-        line-height: 20px;
-    }
-
-    #txt-box {
-        width: 660px;
-        height: 100px;
-        border-radius: 10px;
-        padding: 5px;
-        font-size: 14px;
-    }
-
-    #sw-go,
-    #sw-submit {
-        width: 740px;
-        height: 30px;
-        color: white;
-        background: #454545;
-        border: none;
-        font-family: Open Sans;
-        font-size: 16px;
-    }
-
-    @media (max-width: 766px) {
-        #id1 {
-            padding-right: 0;
+        .navbar {
+            padding-top: 0;
+            padding-bottom: 0;
         }
-    }
+        .navbar-brand {
+            color: #ffffff;
+            font-family: "Nova Square";
+            font-size: 20px;
+            margin-right: 20px;
+        }
+        #id1 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .card {
+            margin-top: 100px;
+            width: 740px;
+            height: 360px;
+            border-radius: 0;
+            color: white;
+            background: #1e1e1e;
+        }
+        .card-title {
+            font-family: "Nova Square";
+            font-size: 48px;
+        }
+        .card-text {
+            width: 660px;
+            text-align: left;
+            font-family: "Open Sans";
+            line-height: 20px;
+        }
+
+        #txt-box {
+            width: 660px;
+            height: 100px;
+            border-radius: 10px;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        #sw-go, #sw-submit {
+            width: 740px;
+            height: 30px;
+            color: white;
+            background: #454545;
+            border: none;
+            font-family: Open Sans;
+            font-size: 16px;
+        }
+
+        @media (max-width: 766px) {
+            #id1 {
+                padding-right: 0;
+            }
+
+            .card {
+                margin-top: 30px;
+                width: 95%;
+                height: 80%;
+            }
+            .card-title {
+                font-size: 24px;
+            }
+            .card-text {
+                width: 95%;
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            #txt-box {
+                width: 95%;
+                border-radius: 5px;
+                padding: 3px;
+                font-size: 12px;
+            }
+
+            #sw-go, #sw-submit {
+                width: 95%;
+                height: 30px;
+                font-family: Open Sans;
+                font-size: 16px;
+            }
+
+        }
     </style>
 </head>
 
@@ -175,7 +194,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active py-0" href="#" id="id1">Home<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link py-0" href="/about" id="id1">About</a>
-                <a class="nav-item nav-link py-0" href="/contact" id="id1">Contact</a>
+                <a class="nav-item nav-link py-0" href="/developers" id="id1">Developers</a>
             </div>
         </div>
     </nav>
